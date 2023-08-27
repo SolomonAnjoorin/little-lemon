@@ -12,7 +12,7 @@ function Header() {
         recipes served with a modern <br />
         twist. <br />
       </h3>
-      <botton type="botton"> Reserve a Table</botton>
+      <button class="button">Reserve a Table</button>
     </header>
   );
 }

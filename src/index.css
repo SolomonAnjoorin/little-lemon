@@ -17,19 +17,20 @@ code {
 /* ... (existing styles for headings, paragraphs, and spans) ... */
 
 /* Step 3: Style the navigation elements */
+/* Base styles for the nav bar */
 nav {
   background-color: #ffffff;
-  padding: 50px 0;
+  padding: 20px 0; /* Adjust padding for smaller screens */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
 /* Style the logo image */
 nav img {
-  height: 100px;
-  margin-right: 20px;
-  padding: 0 50px;
+  height: 80px; /* Reduce logo size for smaller screens */
+  margin: 10px 20px; /* Adjust margins for smaller screens */
 }
 
 /* Style list items in navigation */
@@ -38,7 +39,8 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  padding: 0 50px;
+  padding: 0 20px; /* Adjust padding for smaller screens */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
 }
 
 /* Style links in navigation */
@@ -46,14 +48,26 @@ nav a {
   text-decoration: none;
   color: #000000;
   font-weight: bold;
-  margin-right: 20px;
-  font-size: 20px;
+  margin: 5px 10px; /* Adjust margins for smaller screens */
+  font-size: 16px; /* Reduce font size for smaller screens */
 }
 
 /* Highlighting navigation link on hover */
 nav a:hover {
-  color: #f4CE14;
+  color: #f4ce14;
 }
+
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width: 768px) {
+  nav img {
+    height: 60px; /* Further reduce logo size for smaller screens */
+  }
+
+  nav a {
+    font-size: 14px; /* Adjust font size for even smaller screens */
+  }
+}
+
 
 /* Style the header */
 header {
@@ -69,7 +83,7 @@ h1 {
   font-size: 46pt;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
-  color: #ff9900;
+  color: #F4CE14;
   padding: 0 50px;
   text-align: left;
 }
@@ -107,6 +121,44 @@ h2 {
   }
 }
 
-button  {
-   color: #f4CE14;
+.container {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
 }
+
+button {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #F4CE14;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+  box-shadow: 0 4px 6px #333333;
+  
+  float: left; /* Align the button to the left of the page */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #333333;
+  color: white;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  button {
+    float: none; /* Reset float for smaller screens */
+  }
+}
+button { 
+margin-left: 50px;
+}
+
+
+
