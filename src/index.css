@@ -106,7 +106,6 @@ h2 {
   }
   h3 {
     padding-left: 10px;
-    
   }
 }
 
@@ -139,7 +138,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
   box-shadow: 0 4px 6px #333333;
-  
+
   float: left; /* Align the button to the left of the page */
 }
 
@@ -156,7 +155,7 @@ button:hover {
     float: none; /* Reset float for smaller screens */
   }
 }
-button { 
+button {
 margin-left: 50px;
 }
 
