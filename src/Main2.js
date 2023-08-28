@@ -1,10 +1,12 @@
 import React from 'react';
-
+import greekSaladImage from './greek salad.jpg'; 
+import restaurantChefBImage from './restaurant chef B.jpg'; // Corrected image filename
+import lemonDessertImage from './lemon dessert.jpg';
 function Main2() {
   return (
     <main>
       <section>
-        <h4>This weeks specials!</h4>
+        <h4>This week's specials!</h4>
       </section>
       {/* Add more content here */}
       <section className="cards-section">
@@ -16,31 +18,33 @@ function Main2() {
       <section className="additional-cards-section">
         <div className="card">
           <div className="card-image">
-            <img src="card1.jpg" alt="Card 1" />
+            <img src={greekSaladImage} alt="Card 1"/>
           </div>
           <div className="card-content">
-            <h5>Card 1</h5>
-            <p>This is the content of Card 1.</p>
+            <h5>Greek salad   </h5>
+            <h6>$12.99 </h6>
+            <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons. </p>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-image">
+           <img src={restaurantChefBImage} alt="Restaurant Chef B" />
+          </div>
+          <div className="card-content">
+            <h5>Bruchetta   </h5>
+            <h6>$5.99</h6>
+            <p>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
           </div>
         </div>
 
         <div className="card">
           <div className="card-image">
-            <img src="card5.jpg" alt="Card 2" />
+            <img src={lemonDessertImage} alt="Card 3" />
           </div>
           <div className="card-content">
-            <h5>Card 2</h5>
-            <p>This is the content of Card 2.</p>
-          </div>
-        </div>
-
-        <div className="card">
-          <div className="card-image">
-            <img src="card6.jpg" alt="Card 3" />
-          </div>
-          <div className="card-content">
-            <h5>Card 3</h5>
-            <p>This is the content of Card 3.</p>
+            <h5>Lemon Dessert</h5>
+            <h6>$5.00</h6>
+            <p>This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined..</p>
           </div>
         </div>
       </section>

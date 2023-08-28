@@ -224,52 +224,6 @@ margin-top: 30px;
 
 
 
-/* Your existing CSS styles */
-
-.additional-cards-section {
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a shadow to the card container */
-}
-
-.card {
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin: 10px;
-  width: calc(33.33% - 20px);
-  box-sizing: border-box;
-  transition: transform 0.3s, box-shadow 0.3s; /* Adding transition for zoom effect and shadow */
-}
-
-.card:hover {
-  transform: scale(1.05); /* Applying a zoom effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a shadow on hover */
-}
-
-.card-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.card-content h5 {
-  margin: 5px 0;
-}
-
-/* Additional styles for responsiveness */
-@media (max-width: 768px) {
-  .additional-cards-section {
-    flex-direction: column;
-  }
-
-  .card {
-    width: 100%;
-    margin: 10px 0; /* Adjusting margin for better spacing */
-  }
-}
-
-/* Your existing CSS styles */
-
-
 
 /* Styles for the button */
 .cards-button {
@@ -307,10 +261,10 @@ margin-top: 30px;
     align-items: center; /* Center align the cards and button */
   }
 
-  .card {
+  /*.card {
     width: 100%;
     margin: 10px 0;
-  }
+  }*/
   
   .cards-button {
     margin-top: 10px; /* Add some spacing between the cards and the button */
@@ -325,5 +279,94 @@ h4 {
   margin-top: 140px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+
+
+
+
+
+
+
+/* Your existing CSS styles */
+/* Main2.css */
+.additional-cards-section {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: 1px solid #ddd;
+  flex: 0 1 calc(25% - 20px); /* Adjust width for 4 cards in a row */
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 800px;
+  box-shadow: 0 4px 6px #333333;
+  border-radius: 10px;
+  margin-bottom: 100px;
+  margin-left: 70px;
+  margin-right: 70px;
+  background-color: #EDEFEE;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-content h5 {
+  margin: 10px 0; /* Adjust margin for better spacing */
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 768px) {
+  .additional-cards-section {
+    flex-direction: column;
+    align-items: center; /* Center-align cards in a column layout */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Full width for cards in a column */
+    margin: 10px 0;
+    padding: 20px; /* Adjust padding for better spacing */
+  }
+}
+
+
+
+
+ h5 {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 20px;
+    padding-top: 30px;
+ }
+
+ h6 {
+     font-size: 30px;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     text-align: right;
+     margin-right: 30px;
+     margin-top: -45px;
+     color: #EE9972;
+ }
+
+ P {
+     font-size: 25px;
+     font-family: Arial, Helvetica, sans-serif;
+     margin-left: 20px;
+     line-height: 45px;
+ }
+/* Your existing CSS styles */
+/*  cd little-lemon
+  npm start*/
+
 
 
