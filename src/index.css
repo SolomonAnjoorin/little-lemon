@@ -341,29 +341,83 @@ h4 {
 
 
 
+/* Default styles for all screen sizes */
+h5 {
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-left: 20px;
+  padding-top: 30px;
+}
 
- h5 {
-    font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding-left: 20px;
-    padding-top: 30px;
- }
+h6 {
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: right;
+  margin-right: 30px;
+  margin-top: -45px;
+  color: #EE9972;
+}
 
- h6 {
-     font-size: 30px;
-     font-family: Georgia, 'Times New Roman', Times, serif;
-     text-align: right;
-     margin-right: 30px;
-     margin-top: -45px;
-     color: #EE9972;
- }
+p {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20px;
+  line-height: 35px;
+  padding-bottom: 65px;
+}
 
- P {
-     font-size: 25px;
-     font-family: Arial, Helvetica, sans-serif;
-     margin-left: 20px;
-     line-height: 45px;
- }
+h7 {
+  font-size: 30px;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.moped-svg {
+  width: 5em;
+  height: 2.5em;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  h5 {
+    font-size: 24px;
+    padding-left: 10px;
+    padding-top: 20px;
+  }
+
+  h6 {
+    font-size: 24px;
+    margin-right: 20px;
+    margin-top: -35px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-left: 10px;
+    line-height: 30px;
+    padding-bottom: 50px;
+  }
+
+  h7 {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .moped-svg {
+    width: 3.5em;
+    height: 2em;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+
 /* Your existing CSS styles */
 /*  cd little-lemon
   npm start*/
