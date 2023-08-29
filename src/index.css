@@ -306,10 +306,9 @@ h4 {
   border-radius: 10px;
   margin-bottom: 100px;
   margin-left: 70px;
-  margin-right: 70px;
+  margin-right: 100px;
   background-color: #EDEFEE;
 }
-
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -421,6 +420,3 @@ footer {
 /* Your existing CSS styles */
 /*  cd little-lemon
   npm start*/
-
-
-
