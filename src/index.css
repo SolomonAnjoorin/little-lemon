@@ -13,64 +13,60 @@ code {
     monospace;
 }
 
-/* Step 2: Style the headings, paragraphs, and spans */
-/* ... (existing styles for headings, paragraphs, and spans) ... */
 
-/* Step 3: Style the navigation elements */
-/* Base styles for the nav bar */
+
 nav {
   background-color: #ffffff;
-  padding: 20px 0; /* Adjust padding for smaller screens */
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow to the bottom */
+  flex-wrap: wrap;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the logo image */
+
 nav img {
-  height: 80px; /* Reduce logo size for smaller screens */
-  margin: 10px 20px; /* Adjust margins for smaller screens */
+  height: 80px;
+  margin: 10px 20px;
 }
 
-/* Style list items in navigation */
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  padding: 0 50px; /* Adjust padding for smaller screens */
-  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  padding: 0 50px;
+  flex-wrap: wrap;
 }
 
-/* Style links in navigation */
+
 nav a {
   text-decoration: none;
   color: #000000;
   font-weight: bold;
-  margin: 5px 10px; /* Adjust margins for smaller screens */
-  font-size: 22px; /* Reduce font size for smaller screens */
+  margin: 5px 10px;
+  font-size: 22px;
 }
 
-/* Highlighting navigation link on hover */
+
 nav a:hover {
   color: #f4ce14;
 }
 
-/* Media query for screens with a maximum width of 768px */
+
 @media screen and (max-width: 768px) {
   nav img {
-    height: 60px; /* Further reduce logo size for smaller screens */
+    height: 60px;
   }
 
   nav a {
-    font-size: 14px; /* Adjust font size for even smaller screens */
+    font-size: 14px;
   }
 }
 
 
-/* Style the header */
 header {
   background-color: #495e57;
   color: #fff;
@@ -79,7 +75,7 @@ header {
   padding-bottom: 135px;
 }
 
-/* Style the header title */
+
 h1 {
   font-size: 46pt;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -99,7 +95,7 @@ h2 {
 
 }
 
-/* Media Query for screens with a maximum width of 768px */
+
 @media screen and (max-width: 768px) {
   h2, p {
     padding: 0 0px;
@@ -110,7 +106,7 @@ h2 {
   }
 }
 
-/* Media Query for screens with a minimum width of 768px */
+
 @media (min-width: 768px) {
   h3 {
     padding-left: 0px;
@@ -123,7 +119,7 @@ h2 {
 
 .container {
   display: flex;
-  justify-content: flex-start; /* Align items to the left */
+  justify-content: flex-start;
 }
 
 button {
@@ -139,21 +135,20 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
   box-shadow: 0 4px 6px #333333;
-
-  float: left; /* Align the button to the left of the page */
+  float: left;
 }
 
-/* Hover effect */
+
 button:hover {
   background-color: #333333;
   color: white;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
   button {
-    float: none; /* Reset float for smaller screens */
+    float: none;
   }
 }
 button {
@@ -167,7 +162,7 @@ margin-top: 30px;
 
 
 
-/* Base styling for the container */
+
 .image-container {
   position: relative;
   width: 400px;
@@ -176,23 +171,23 @@ margin-top: 30px;
   float: right;
   margin-right: 30px;
   margin-top: -430px;
-  border-radius: 10px; /* Add rounded corners */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow */
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the image */
+
 .image-container img {
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
+
 .image-container:hover img {
   transform: scale(1.1);
 }
 
-/* Caption overlay */
+
 .image-caption {
   position: absolute;
   bottom: 0;
@@ -206,12 +201,12 @@ margin-top: 30px;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Show caption on hover */
+
 .image-container:hover .image-caption {
   opacity: 1;
 }
 
-/* Media query for smaller screens */
+
 @media (max-width: 768px) {
   .image-container {
     width: 100%; 
@@ -225,8 +220,6 @@ margin-top: 30px;
 
 
 
-
-/* Styles for the button */
 .cards-button {
   display: inline-block;
   padding: 15px 35px;
@@ -240,8 +233,8 @@ margin-top: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
   box-shadow: 0 4px 6px #333333;
-  
-  /* Align the button to the right */
+
+
   position: absolute;
   top: 750px;
   right: 130px;
@@ -254,23 +247,18 @@ margin-top: 30px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Additional styles for responsiveness */
+
 @media (max-width: 768px) {
   .additional-cards-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align the cards and button */
+    align-items: center;
   }
 
-  /*.card {
-    width: 100%;
-    margin: 10px 0;
-  }*/
-  
   .cards-button {
-    margin-top: 10px; /* Add some spacing between the cards and the button */
-    position: static; /* Reset position for responsiveness */
-    transform: none; /* Reset transform for responsiveness */
+    margin-top: 10px;
+    position: static;
+    transform: none;
   }
 }
 
@@ -288,18 +276,16 @@ h4 {
 
 
 
-/* Your existing CSS styles */
-/* Main2.css */
 .additional-cards-section {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+  flex-wrap: wrap;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card {
   border: 1px solid #ddd;
-  flex: 0 1 calc(25% - 20px); /* Adjust width for 4 cards in a row */
+  flex: 0 1 calc(25% - 20px);
   box-sizing: border-box;
   transition: transform 0.3s, box-shadow 0.3s;
   height: 800px;
@@ -322,26 +308,25 @@ h4 {
 }
 
 .card-content h5 {
-  margin: 10px 0; /* Adjust margin for better spacing */
+  margin: 10px 0; 
 }
 
-/* Additional styles for responsiveness */
 @media (max-width: 768px) {
   .additional-cards-section {
     flex-direction: column;
-    align-items: center; /* Center-align cards in a column layout */
+    align-items: center; 
   }
 
   .card {
-    flex: 1 1 100%; /* Full width for cards in a column */
+    flex: 1 1 100%; 
     margin: 10px 0;
-    padding: 20px; /* Adjust padding for better spacing */
+    padding: 20px;
   }
 }
 
 
 
-/* Default styles for all screen sizes */
+
 h5 {
   font-size: 30px;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -380,7 +365,7 @@ h7 {
   fill: currentColor;
 }
 
-/* Media query for smaller screens */
+
 @media screen and (max-width: 768px) {
   h5 {
     font-size: 24px;
