@@ -1,6 +1,6 @@
-
 import React from 'react';
 import logo from './Llittel Lemon Logo .svg'; // Import the logo image
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
@@ -8,22 +8,22 @@ function Nav() {
       <img src={logo} alt="Logo" className="logo" /> {/* Add the logo image */}
       <ul>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/about">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/menu">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="/reservations">Reservations</a>
+          <Link to="/reservations">Reservations</Link>
         </li>
         <li>
-          <a href="/order-online">Order Online</a>
+          <Link to="/orderonline">Order Online</Link>
         </li>
         <li>
-          <a href="/login">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>
