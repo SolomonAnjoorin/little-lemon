@@ -403,6 +403,64 @@ footer {
 }
 
 
+
+
+
+
+/* Apply base styles to the form */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px; /* Add margin from the bottom of the page */
+}
+
+/* Style labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style input and select fields */
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style submit button */
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style submit button on hover */
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  /* Adjust max-width and padding for smaller screens */
+  form {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+
+
+
 /* Your existing CSS styles */
 /*  cd little-lemon
   npm start*/
