@@ -15,6 +15,7 @@ function Main2() {
       <section className="additional-cards-section">
         <button className="cards-button">Online Menu</button> {/* Button added here */}
       </section>
+      
       <section className="additional-cards-section">
         <div className="card">
           <div className="card-image">

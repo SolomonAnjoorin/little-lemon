@@ -1,21 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 
-const BookingForm = () => {
+const BookingForm = ({ availableTimes }) => {
   const [reservationData, setReservationData] = useState({
     date: '',
-    time: '17:00',
+    time: availableTimes[0], // Use the first available time as the default
     guests: '1',
     occasion: 'Birthday',
   });
 
-  const [availableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ]);
+  const bookingReducer = (state, action) => {
+    switch (action.type) {
+      case 'UPDATE_TIMES':
+        const selectedDate = new Date(action.selectedDate);
+        const startTime = new Date(selectedDate);
+        startTime.setHours(17, 0); // Set the start time to 17:00
+        const endTime = new Date(selectedDate);
+        endTime.setHours(22, 0); // Set the end time to 22:00
+
+        const filteredTimes = availableTimes.filter((time) => {
+          const timeParts = time.split(':');
+          const timeDate = new Date(selectedDate);
+          timeDate.setHours(parseInt(timeParts[0], 10));
+          timeDate.setMinutes(parseInt(timeParts[1], 10));
+          return (
+            !state.some((existingTime) => existingTime === time) && // Check if the time is not already booked
+            timeDate >= startTime && timeDate <= endTime // Check if the time is within the range
+          );
+        });
+        return filteredTimes;
+      default:
+        return state;
+    }
+  };
+
+  const [state, dispatch] = useReducer(bookingReducer, availableTimes);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +41,10 @@ const BookingForm = () => {
       ...reservationData,
       [name]: value,
     });
+
+    if (name === 'date') {
+      dispatch({ type: 'UPDATE_TIMES', selectedDate: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -51,7 +73,7 @@ const BookingForm = () => {
         value={reservationData.time}
         onChange={handleInputChange}
       >
-        {availableTimes.map((time) => (
+        {state.map((time) => (
           <option key={time} value={time}>
             {time}
           </option>
@@ -79,7 +101,7 @@ const BookingForm = () => {
         <option>Birthday</option>
         <option>Anniversary</option>
         <option>Date</option>
-        <option>Get to gether</option>
+        <option>Get together</option>
       </select>
       <input type="submit" value="Make Your Reservation" />
     </form>

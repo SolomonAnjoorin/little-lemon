@@ -1,13 +1,12 @@
-// BookingPage.js
 import React from 'react';
-import BookingForm from './BookingForm'; // Assuming BookingForm is in the same directory
+import BookingForm from './BookingForm';
 
-const BookingPage = () => {
+const BookingPage = ({ availableTimes }) => { // Receive availableTimes as a prop
   return (
     <div>
       <h2>Make a Reservation</h2>
       <p>Fill out the form below to book your table.</p>
-      <BookingForm /> {/* Include the BookingForm component */}
+      <BookingForm availableTimes={availableTimes} />
       {/* Additional content can be added here if needed */}
     </div>
   );
