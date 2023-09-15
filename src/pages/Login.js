@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Nav';
+import Footer from '../Footer'
 
 function Login() {
   return (
@@ -7,6 +8,7 @@ function Login() {
       <Nav> </Nav>
       <h1>Login Page</h1>
       <p> login here</p>
+      <Footer></Footer>
     </div>
   );
 }

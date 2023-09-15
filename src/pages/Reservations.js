@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../Nav';
 import BookingPage from '../Component/BookingPage';
+import Footer from '../Footer'
 
 function Reservations() {
   // Move the availableTimes state to the Reservations component
@@ -22,6 +23,7 @@ function Reservations() {
       {/* Pass down the availableTimes state as a prop to BookingPage */}
       <BookingPage availableTimes={availableTimes} />
       {/* Render other components or content */}
+      <Footer></Footer>
     </div>
   );
 }

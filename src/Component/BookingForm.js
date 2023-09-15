@@ -1,39 +1,40 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchAPI,submitAPI } from '../api';
 
-const BookingForm = ({ availableTimes }) => {
+const BookingForm = () => {
+  const [availableTimes, setAvailableTimes] = useState([]);
   const [reservationData, setReservationData] = useState({
     date: '',
-    time: availableTimes[0], // Use the first available time as the default
+    time: '',
     guests: '1',
     occasion: 'Birthday',
   });
 
-  const bookingReducer = (state, action) => {
-    switch (action.type) {
-      case 'UPDATE_TIMES':
-        const selectedDate = new Date(action.selectedDate);
-        const startTime = new Date(selectedDate);
-        startTime.setHours(17, 0); // Set the start time to 17:00
-        const endTime = new Date(selectedDate);
-        endTime.setHours(22, 0); // Set the end time to 22:00
-
-        const filteredTimes = availableTimes.filter((time) => {
-          const timeParts = time.split(':');
-          const timeDate = new Date(selectedDate);
-          timeDate.setHours(parseInt(timeParts[0], 10));
-          timeDate.setMinutes(parseInt(timeParts[1], 10));
-          return (
-            !state.some((existingTime) => existingTime === time) && // Check if the time is not already booked
-            timeDate >= startTime && timeDate <= endTime // Check if the time is within the range
-          );
-        });
-        return filteredTimes;
-      default:
-        return state;
+  // Initialize available times for today's date
+  const initializeTimes = async () => {
+    try {
+      const today = new Date();
+      const formattedDate = today.toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+      const times = await fetchAPI(formattedDate);
+      setAvailableTimes(times);
+    } catch (error) {
+      console.error('Error initializing available times:', error);
     }
   };
 
-  const [state, dispatch] = useReducer(bookingReducer, availableTimes);
+  useEffect(() => {
+    initializeTimes(); // Call the initializeTimes function when the component mounts
+  }, []);
+
+  // Update available times when the date is changed
+  const updateTimes = async (selectedDate) => {
+    try {
+      const times = await fetchAPI(selectedDate);
+      setAvailableTimes(times);
+    } catch (error) {
+      console.error('Error updating available times:', error);
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -43,13 +44,22 @@ const BookingForm = ({ availableTimes }) => {
     });
 
     if (name === 'date') {
-      dispatch({ type: 'UPDATE_TIMES', selectedDate: value });
+      updateTimes(value); // Call updateTimes when the date input changes
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted with data:', reservationData);
+    try {
+      const success = await submitAPI(reservationData);
+      if (success) {
+        console.log('Booking successful');
+      } else {
+        console.error('Booking failed');
+      }
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+    }
   };
 
   return (
@@ -57,6 +67,7 @@ const BookingForm = ({ availableTimes }) => {
       style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}
       onSubmit={handleSubmit}
     >
+      {/* Your form inputs */}
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -73,7 +84,7 @@ const BookingForm = ({ availableTimes }) => {
         value={reservationData.time}
         onChange={handleInputChange}
       >
-        {state.map((time) => (
+        {availableTimes.map((time) => (
           <option key={time} value={time}>
             {time}
           </option>
@@ -101,7 +112,7 @@ const BookingForm = ({ availableTimes }) => {
         <option>Birthday</option>
         <option>Anniversary</option>
         <option>Date</option>
-        <option>Get together</option>
+        <option>Get-togethers</option>
       </select>
       <input type="submit" value="Make Your Reservation" />
     </form>

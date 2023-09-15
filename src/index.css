@@ -461,6 +461,27 @@ input[type="submit"]:hover {
 
 
 
+/* Footer.css */
+
+footer {
+  background-color: #EDEFEE; /* Background color of the footer */
+  color: #000000; /* Text color */
+  padding: 20px; /* Padding around the content inside the footer */
+  /*box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+footer p {
+  margin: 0; /* Remove default margin for the paragraph */
+  text-align: center; /* Center align the text */
+}
+
+
+
+
+
+
+
+
 /* Your existing CSS styles */
 /*  cd little-lemon
   npm start*/
