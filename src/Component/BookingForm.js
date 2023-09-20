@@ -1,8 +1,9 @@
+// BookingForm.js
 import React, { useState, useEffect } from 'react';
-import { fetchAPI,submitAPI } from '../api';
+import { fetchAPI, submitAPI } from '../api';
 
-const BookingForm = () => {
-  const [availableTimes, setAvailableTimes] = useState([]);
+const BookingForm = ({ availableTimes: propAvailableTimes }) => {
+  const [availableTimes, setAvailableTimes] = useState(propAvailableTimes);
   const [reservationData, setReservationData] = useState({
     date: '',
     time: '',
@@ -23,8 +24,10 @@ const BookingForm = () => {
   };
 
   useEffect(() => {
-    initializeTimes(); // Call the initializeTimes function when the component mounts
-  }, []);
+    // Initialize available times with propAvailableTimes when the component mounts
+    setAvailableTimes(propAvailableTimes);
+    initializeTimes();
+  }, [propAvailableTimes]);
 
   // Update available times when the date is changed
   const updateTimes = async (selectedDate) => {
@@ -33,6 +36,31 @@ const BookingForm = () => {
       setAvailableTimes(times);
     } catch (error) {
       console.error('Error updating available times:', error);
+    }
+  };
+
+  const validateGuests = (guests) => {
+    const parsedGuests = parseInt(guests, 10);
+    return !isNaN(parsedGuests) && parsedGuests >= 1;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (validateGuests(reservationData.guests)) {
+      // Handle the form submission for valid input
+      try {
+        const success = await submitAPI(reservationData);
+        if (success) {
+          console.log('Booking successful');
+        } else {
+          console.error('Booking failed');
+        }
+      } catch (error) {
+        console.error('Error submitting booking:', error);
+      }
+    } else {
+      // Handle invalid input
+      console.log('Invalid number of guests:', reservationData.guests);
     }
   };
 
@@ -45,20 +73,6 @@ const BookingForm = () => {
 
     if (name === 'date') {
       updateTimes(value); // Call updateTimes when the date input changes
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const success = await submitAPI(reservationData);
-      if (success) {
-        console.log('Booking successful');
-      } else {
-        console.error('Booking failed');
-      }
-    } catch (error) {
-      console.error('Error submitting booking:', error);
     }
   };
 

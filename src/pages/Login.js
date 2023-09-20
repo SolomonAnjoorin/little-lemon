@@ -1,14 +1,20 @@
 import React from 'react';
 import Nav from '../Nav';
-import Footer from '../Footer'
+import Footer from '../Footer';
+import LoginForm from './LoginForm'; // Import the LoginForm component
+
 
 function Login() {
   return (
     <div>
-      <Nav> </Nav>
+      <Nav />
       <h1>Login Page</h1>
-      <p> login here</p>
-      <Footer></Footer>
+      <p>Login here</p>
+
+      {/* Include the LoginForm component here */}
+      <LoginForm />
+
+      <Footer />
     </div>
   );
 }
