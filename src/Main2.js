@@ -2,6 +2,7 @@ import React from 'react';
 import greekSaladImage from './greek salad.jpg'; 
 import restaurantChefBImage from './restaurant chef B.jpg'; // Corrected image filename
 import lemonDessertImage from './lemon dessert.jpg';
+import { Link } from 'react-router-dom'; 
 function Main2() {
   return (
     <main>
@@ -13,9 +14,10 @@ function Main2() {
         {/* ... Existing cards ... */}
       </section>
       <section className="additional-cards-section">
+        <Link to="/menu">
         <button className="cards-button">Online Menu</button> {/* Button added here */}
+        </Link>
       </section>
-      
       <section className="additional-cards-section">
         <div className="card">
           <div className="card-image">

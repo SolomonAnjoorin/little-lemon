@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 
 function Header() {
   return (
@@ -12,7 +13,10 @@ function Header() {
         recipes served with a modern <br />
         twist. <br />
       </h3>
-      <button class="button">Reserve a Table</button>
+      {/* Use Link to navigate to the Reservations page */}
+      <Link to="/reservations">
+        <button className="button">Reserve a Table</button>
+      </Link>
     </header>
   );
 }

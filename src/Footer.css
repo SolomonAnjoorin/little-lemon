@@ -1,0 +1,61 @@
+/* Add this CSS code to your 'Footer.css' file */
+
+footer {
+    background-color: #495E57;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the navigation container */
+  }
+  
+  .menu li {
+    flex: 1;
+    margin: 10px;
+    padding: 0;
+  }
+  
+  .footer-header {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  /* Add styles for the yellow color and hover effect */
+  .footer-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s; /* Add a smooth transition for hover effect */
+  }
+  
+  .footer-links li a:hover {
+    color: yellow; /* Change the color to yellow on hover */
+  }
+  
+  .footer-logo {
+    max-width: 100px;
+    height: 10px; /* Set the height to 10px for the logo */
+  }
+  
+  .contact {
+    flex: 1;
+  }
+  
+  .connect {
+    flex: 1;
+  }
+  

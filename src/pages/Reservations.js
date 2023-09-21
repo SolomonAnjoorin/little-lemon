@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../Nav';
 import BookingPage from '../Component/BookingPage';
-import Footer from '../Footer'
+import Footer from '../Footer';
 
 function Reservations() {
   // Move the availableTimes state to the Reservations component
@@ -14,11 +14,9 @@ function Reservations() {
     '22:00',
   ]);
 
-  // Define any other state and state-changing functions that are needed
-
   return (
     <div>
-      <Nav> </Nav>
+      <Nav></Nav>
       <h1>Reservations Page</h1>
       {/* Pass down the availableTimes state as a prop to BookingPage */}
       <BookingPage availableTimes={availableTimes} />
